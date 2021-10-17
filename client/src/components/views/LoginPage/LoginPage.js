@@ -1,9 +1,7 @@
 import React, { useState} from 'react'
 import { withRouter } from 'react-router-dom';
-import Axios from 'axios';
 import { useDispatch} from 'react-redux';
 import { loginUser } from '../../../_actions/user_action'
-//import { response } from 'express';
 
 function LoginPage(props) {
     const dispatch = useDispatch();
@@ -24,7 +22,7 @@ function LoginPage(props) {
             password: Password
         }
         dispatch(loginUser(body))
-            .then((response) => {
+            .then(response => {
                 if (response.payload.loginSuccess) {
                     props.history.push("/")
                 } else {
